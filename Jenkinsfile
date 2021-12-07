@@ -40,6 +40,14 @@ pipeline{
               }
             }
           }
+     stage("Quality gate") {
+            steps {
+               script{
+                  last_started=env.STAGE_NAME
+            }
+                waitForQualityGate abortPipeline: true
+            }
+        }
      stage('Deploy to artifactory'){
         steps{
            script{
