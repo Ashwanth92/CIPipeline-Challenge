@@ -40,17 +40,7 @@ pipeline{
               }
             }
           }
-     stage("SonarQube Quality Gate") { 
-        steps {
-           timeout(time: 1, unit: 'HOURS') { 
-           def qg = waitForQualityGate() 
-           if (qg.status != 'OK') {
-             error "Pipeline aborted due to quality gate failure: ${qg.status}"
-           }
-        }
-        }
-        }
-     stage('Deploy to artifactory'){
+          stage('Deploy to artifactory'){
         steps{
            script{
               last_started=env.STAGE_NAME
