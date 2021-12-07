@@ -54,7 +54,7 @@ pipeline{
               last_started=env.STAGE_NAME
             }
         rtUpload(
-         serverId : 'jfrog-platform-1',
+         serverId : 'Artifactory-1',
          spec :'''{
            "files" :[
            {
