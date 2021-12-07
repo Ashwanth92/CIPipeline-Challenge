@@ -37,6 +37,7 @@ pipeline{
                  
                 sh 'java -version'
                 sh 'mvn clean package sonar:sonar'
+                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Ashwanth92_CIPipeline-Challenge'
               }
             }
           }
