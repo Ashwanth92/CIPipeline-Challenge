@@ -40,11 +40,9 @@ pipeline{
               }
             }
           }
-       stage("Quality Gate") {
+       stage("Quality gate") {
             steps {
-                timeout(time: 1, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
+                waitForQualityGate abortPipeline: true
             }
         }
           stage('Deploy to artifactory'){
